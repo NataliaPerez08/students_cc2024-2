@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\title{Práctica 1:  \\ Cómputo Concurrente 2024-2}
+\author{Pérez Romero Natalia Abigail}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introducción y jugando con hilos}
+
+Modifica el código de Hilos.java, realizando lo siguiente:
+\begin{enumerate}
+    \item Genera una estructura de datos (en donde después guardarás los hilos).
+    \item Agrega 10 hilos a esta estructura de datos mediante un for (no te olvides de inicializarlos).
+    \item Finalmente, haz join a cada hilo con un for o foreach.
+    \item Agrega una captura de pantalla a tu reporte sobre como quedó tu código al final
+\end{enumerate}
+
+\section{Synchronized}
+¿Qué significara? Creo que un sección del programa que provoca que un hilo se ejecute antes de otro, según indiquemos
+
+Synchronization en Java:
+
+Los hilos se comunican principalmente compartiendo el acceso a los campos y a los objetos a los que se refieren los campos de referencia. Esta forma de comunicación es extremadamente eficiente, pero posibilita dos tipos de errores: interferencia entre hilos y errores de consistencia de memoria. La herramienta necesaria para evitar estos errores es la sincronización.
+
+Sin embargo, la sincronización puede introducir la contención de hilos, que se produce cuando dos o más hilos intentan acceder simultáneamente al mismo recurso y hacen que el tiempo de ejecución de Java ejecute uno o más hilos más lentamente, o incluso suspenda su ejecución. La inanición y el livelock son formas de contención de hilos.
+
+Synchronization. (n.d.). Retrieved from https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
+
+\section{Cuestionario}
+
+\begin{enumerate}
+    \item ¿Porque se utiliza Interrupted Exception en el método main?
+    
+    \item ¿Para que sirve el método Join?
+    
+    \item ¿Qué pasa si no le hacemos Join a los hilos?
+    
+    \item ¿Cuáles son las ventajas de implementar Runnable contra extender de Thread?
+    
+    \item ¿Cuál es la diferencia de implementar Runnable contra Callable?
+    
+    \item ¿Se puede predecir el orden en el que se imprime el mensaje de la clase Hilos?
+    
+    \item En el archivo Hilos2.java, ¿Qué pasa si sacamos la instancia de la clase “h” de t1, es decir, poner h antes de declarar t1?
+    
+    \item Escribe que variables son locales (variables que estan en memoria del hilo) y que variables son compartidas de cada archivo y el por qué. Puedes tomarle captura al código y encerrar en un recuadro dichas variables.
+    
+    \item \textbf{Contesta las preguntas de la sección de Synchronized}
+    \item ¿Cómo podriamos darle un comportamiento diferente a los hilos?
+    \item Escribe lo aprendido sobre esta práctica, así como tus conclusiones. También comparte si tuviste dificultades y los descubrimientos o alguna cosa de interés.
+\end{enumerate}
+\end{document}

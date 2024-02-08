@@ -19,13 +19,28 @@ public class Hilos implements Runnable {
 
     public static void main(String[] args) throws InterruptedException {
         Hilos h = new Hilos();//Se crea una instancia de la clase
+
         Thread t1 = new Thread(h,"1");//Creamos un hilo, le pasamos de parametro la instancia de la clase y un nombre
-        Thread t2 = new Thread(h,"Hilo 2");
-        Thread t3 = new Thread(h,"Hilo 25");
-        Thread t4 = new Thread(h,"Hilo 45");
+        Thread t2 = new Thread(h,"2");
+        Thread t3 = new Thread(h,"25");
+        Thread t4 = new Thread(h,"45");
         
         t1.start();t2.start();t3.start();t4.start(); //Se inicializan los hilos para comenzar su ejecucion
 
         t1.join();t2.join();t3.join();t4.join();//????
+
+        //Genera una estructura de datos (en donde después guardarás los hilos)
+        List<Thread> hilos = new ArrayList<Thread>();
+        // Crea 10 hilos y los guarda en la estructura de datos
+        for (int i = 0; i < 10; i++) {
+            Thread t = new Thread(h,i+"");
+            t.start();
+            hilos.add(t);
+        }
+        // Itera sobre la estructura de datos y espera a que cada hilo termine
+        for (Thread t : hilos) {
+            t.join();
+        }
+
     }
 }
