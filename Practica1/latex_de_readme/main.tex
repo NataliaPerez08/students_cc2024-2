@@ -1,5 +1,16 @@
 \documentclass{article}
 \usepackage{graphicx}
+%import the package
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
 
 \title{Práctica 1:  \\ Cómputo Concurrente 2024-2}
 \author{Pérez Romero Natalia Abigail}
@@ -18,27 +29,30 @@ Modifica el código de Hilos.java, realizando lo siguiente:
     \item Agrega una captura de pantalla a tu reporte sobre como quedó tu código al final
 \end{enumerate}
 
-\section{Synchronized}
-¿Qué significara? Creo que un sección del programa que provoca que un hilo se ejecute antes de otro, según indiquemos
-
-Synchronization en Java:
-
-Los hilos se comunican principalmente compartiendo el acceso a los campos y a los objetos a los que se refieren los campos de referencia. Esta forma de comunicación es extremadamente eficiente, pero posibilita dos tipos de errores: interferencia entre hilos y errores de consistencia de memoria. La herramienta necesaria para evitar estos errores es la sincronización.
-
-Sin embargo, la sincronización puede introducir la contención de hilos, que se produce cuando dos o más hilos intentan acceder simultáneamente al mismo recurso y hacen que el tiempo de ejecución de Java ejecute uno o más hilos más lentamente, o incluso suspenda su ejecución. La inanición y el livelock son formas de contención de hilos.
-
-Synchronization. (n.d.). Retrieved from https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
-
 \section{Cuestionario}
 
 \begin{enumerate}
     \item ¿Porque se utiliza Interrupted Exception en el método main?
     
+    Es necesario indicar si un método puede lanzar una excepción, en este caso, el método main puede lanzar una excepción de tipo InterruptedException, la cual es lanzada cuando un hilo está esperando, durmiendo, u ocupado de alguna otra manera, y el hilo es interrumpido, ya sea antes o durante la actividad. 
+
     \item ¿Para que sirve el método Join?
+    Espera a que este hilo muera. 
+    El método join permite que un hilo se una al final de otro hilo, es decir, detiene su ejecución hasta que el otro hilo termine.
+    Supongamos que un hilo B no puede terminar su ejecución hasta que el hilo A haya terminado su tarea; entonces B se debe unir (join) a A y, por tanto, B no se va a ejecutar hasta que A termine.
     
     \item ¿Qué pasa si no le hacemos Join a los hilos?
-    
+    Si no se realiza un `join` a un hilo (o thread), el hilo se convierte en un "hilo detenido" cuando termina su ejecución. Esto significa que, aunque el hilo ha terminado de ejecutar su tarea, todavía mantiene algunos de sus recursos del sistema, como su identificador de hilo, hasta que se realiza un `join` en él. Si no se realiza un `join` en un hilo y se crean muchos hilos que terminan, estos hilos detenidos pueden consumir recursos del sistema y eventualmente llevar a la falta de recursos, como la incapacidad de crear nuevos hilos o procesos.
+
     \item ¿Cuáles son las ventajas de implementar Runnable contra extender de Thread?
+    
+    Runnable es una interfaz que es usada
+    La interfaz Runnable debe ser implementada por cualquier clase cuyas instancias estén destinadas a ser ejecutadas por un hilo. La clase debe definir un método sin argumentos llamado run.
+    
+    Una clase que implemente Runnable puede ejecutarse sin subclasificar Thread instanciando una instancia de Thread y pasándose a sí misma como objetivo. En la mayoría de los casos, la interfaz Runnable se debe utilizar si sólo se planea sobrescribir el método run() y ningún otro método de Thread. Esto es importante porque las clases no deben ser subclasificadas a menos que el programador tenga la intención de modificar o mejorar el comportamiento fundamental de la clase.
+
+    Un Thread es una cadena de ejecución en un programa. La máquina virtual Java permite que una aplicación tenga varios hilos de ejecución ejecutándose simultáneamente.
+    Cada hilo tiene una prioridad. Los hilos con mayor prioridad se ejecutan con preferencia a los hilos con menor prioridad. Cada hilo puede o no estar marcado como demonio. Cuando el código que se ejecuta en algún subproceso crea un nuevo objeto Thread, el nuevo subproceso tiene su prioridad establecida inicialmente igual a la prioridad del subproceso creador, y es un subproceso demonio si y sólo si el subproceso creador es un demonio.
     
     \item ¿Cuál es la diferencia de implementar Runnable contra Callable?
     
@@ -52,4 +66,12 @@ Synchronization. (n.d.). Retrieved from https://docs.oracle.com/javase/tutorial/
     \item ¿Cómo podriamos darle un comportamiento diferente a los hilos?
     \item Escribe lo aprendido sobre esta práctica, así como tus conclusiones. También comparte si tuviste dificultades y los descubrimientos o alguna cosa de interés.
 \end{enumerate}
+
+\section{Referencias}
+\begin{itemize}
+    \item Class InterruptedException. Oracle. \url{https://docs.oracle.com/javase/8/docs/api/java/lang/InterruptedException.html}
+    \item Class Thread. Oracle. \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#join--}
+    \item Solano, J. A. (2020). Hilos. Unidades de Apoyo para el Aprendizaje. CUAIEED/Facultad de Ingeniería-UNAM. \url{https://uapa.cuaieed.unam.mx/sites/default/files/minisite/static/a0b71f94-7e8c-4cf5-9bfc-cb7aad468992/UAPA-hilos/index.html}
+    \item Interface Runnable. Oracle. \url{https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html}
+\end{itemize}
 \end{document}
