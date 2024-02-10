@@ -12,14 +12,17 @@ public class Hilos implements Runnable {
         int ID = Integer.parseInt(Thread.currentThread().getName());
         if(ID == 1){
             System.out.println("Soy el hilo 1");
+            a= a+b;
+            System.err.println("Valor de a: "+a+" Valor de b: "+b);
         }else{
             System.out.println("Hola soy el: "+ Thread.currentThread().getName());//Pedimos el nombre del hilo pidiendo primero que se seleccione el Hilo
+            System.err.println("Valor de a: "+a+" Valor de b: "+b);
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
+
         Hilos h = new Hilos();//Se crea una instancia de la clase
-        /*
         Thread t1 = new Thread(h,"1");//Creamos un hilo, le pasamos de parametro la instancia de la clase y un nombre
         Thread t2 = new Thread(h,"2");
         Thread t3 = new Thread(h,"25");
@@ -28,8 +31,12 @@ public class Hilos implements Runnable {
         t1.start();t2.start();t3.start();t4.start(); //Se inicializan los hilos para comenzar su ejecucion
 
         t1.join();t2.join();t3.join();t4.join();//????¨
-        */
 
+        //Thread t1 = new Thread("1");//Creamos un hilo, le pasamos un nombre
+        //t1.start();
+        //t1.join();
+
+        /*
         //Genera una estructura de datos (en donde después guardarás los hilos)
         List<Thread> hilos = new ArrayList<Thread>();
         // Crea 10 hilos y los guarda en la estructura de datos
@@ -38,10 +45,11 @@ public class Hilos implements Runnable {
             t.start();
             hilos.add(t);
         }
-        // Itera sobre la estructura de datos y espera a que cada hilo termine
-        //for (Thread t : hilos) {
-         //   t.join();
-        //}
+        //Itera sobre la estructura de datos y espera a que cada hilo termine
+        for (Thread t : hilos) {
+            t.join();
+        }
+         */
 
     }
 }
