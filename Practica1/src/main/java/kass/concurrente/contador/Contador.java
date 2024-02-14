@@ -34,9 +34,16 @@ public class Contador implements Runnable {
     /**
      * Metodo que suma
      */
-    public void suma() {
+    /*public void suma() {
         for(int i = 0; i < RONDAS; ++i){
             valor = valor + 1;
+        }
+    }*/
+    public void suma(){
+        synchronized(this){
+            for(int i = 0; i < RONDAS; ++i){
+                valor = valor + 1;
+            }
         }
     }
 

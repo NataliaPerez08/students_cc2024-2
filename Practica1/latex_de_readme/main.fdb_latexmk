@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1707885749 "c:/Users/nataa/Documents/students_cc2024-2/Practica1/latex_de_readme/main.tex" "main.pdf" "main" 1707885751 0
+["pdflatex"] 1707886591 "c:/Users/nataa/Documents/students_cc2024-2/Practica1/latex_de_readme/main.tex" "main.pdf" "main" 1707886593 0
   "C:/Users/nataa/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1707505674 339932 be0f7d0842c1598c58300435aa008992 ""
   "C:/Users/nataa/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1707362734 11548 f458eebf0af555d508803df809e821df ""
   "C:/Users/nataa/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1684018210 23178960 a38ef67c15b9aff94219fc144358bd8c ""
@@ -69,10 +69,10 @@
   "C:/Users/nataa/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/nataa/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/nataa/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/nataa/Documents/students_cc2024-2/Practica1/latex_de_readme/main.tex" 1707885748 8506 f1a20dce28c2a3f0f91d955d511d3b42 ""
+  "c:/Users/nataa/Documents/students_cc2024-2/Practica1/latex_de_readme/main.tex" 1707886590 8558 58311cf3240406f5b243b576eb8e2fa1 ""
   "intro1.png" 1707530438 63541 6d50aff2db002d1d21465e54f067a045 ""
-  "main.aux" 1707885750 1381 a72784cac48dc51d7f433f83e82332b9 "pdflatex"
-  "main.out" 1707885750 517 0b2d7922b62aec23b81bbc74ee4f9c8c "pdflatex"
+  "main.aux" 1707886592 1381 a72784cac48dc51d7f433f83e82332b9 "pdflatex"
+  "main.out" 1707886592 517 0b2d7922b62aec23b81bbc74ee4f9c8c "pdflatex"
   "sincronized.png" 1707885414 14279 977df2be6d65fdb54185237a903e74e2 ""
   "variablesLocales.png" 1707530438 108602 f645e15f9000367470e5972eacbdc0ae ""
   (generated)

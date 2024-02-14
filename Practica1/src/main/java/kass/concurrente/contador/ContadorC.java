@@ -15,8 +15,8 @@ import java.util.concurrent.ExecutionException;
  */
 public class ContadorC implements Callable<Integer> {
     public static Integer contador = 0;
-    public static final Integer RONDAS = 10000;//Cambiar esta variable para jugar con los valores. USar Thread Sleep
-    public static final Integer HILOS = 4;
+    public static final Integer RONDAS = 3000;//Cambiar esta variable para jugar con los valores. USar Thread Sleep
+    public static final Integer HILOS = 5;
 
     @Override
     public Integer call() throws Exception {//Esta metodo se implementa, retornamos el valor del Generico
@@ -39,12 +39,14 @@ public class ContadorC implements Callable<Integer> {
             resultados.add(service.submit(c));
         }
 
-        Thread.sleep(2000);//Por que se usara un sleep? Explicalo en el pdf
+        Thread.sleep(200);//Por que se usara un sleep? Explicalo en el pdf
+        // Porque se necesita esperar a que los hilos terminen de ejecutarse para poder obtener el valor de contador
         System.out.println(resultados.get(3).isDone());//Que significara esto? Habra una version mejor de saber cuando acabaron ya los hilos?
+        // .isDone() regresa un valor booleano que indica si el hilo ha terminado de ejecutarse
         if(resultados.get(1).isDone()){
             System.out.println(resultados.get(1).get());
         }
-        System.out.println(contador);//Obtendremos el valor esperado?
+        System.out.println(contador);//Obtendremos el valor esperado? Sí, EL contador es igual a RONDAS * HILOS
         System.out.println("FIN Programa");
     }
 }
